@@ -54,7 +54,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/mille-happi.png" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        </body>
     </html>
   )
 }

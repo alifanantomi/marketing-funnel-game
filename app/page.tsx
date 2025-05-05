@@ -14,6 +14,8 @@ import { StrategySlide } from "@/components/strategy-slide"
 import { CategoryBoard } from "@/components/category-board"
 import { DigitalMarketingAnimation } from "@/components/digital-marketing-animation"
 
+import gameContent from "@/content/game.json"
+
 export default function Home() {
   const [gameState, setGameState] = useState({
     phase: "start", // start, phase1, phase2, phase3, phase4, risk, results
@@ -140,8 +142,8 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-8 bg-retro-yellow">
       <div className="w-full max-w-5xl">
         <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-5xl text-retro-dark font-extrabold font-mono tracking-tight">From Buzz to Buy</h1>
-          <p className="text-xl font-mono text-retro-dark">Marketing Funnel Game Based Learning</p>
+          <h1 className="text-3xl md:text-5xl text-retro-dark font-extrabold font-mono tracking-tight">{gameContent.title}</h1>
+          <p className="text-xl font-mono text-retro-dark">{gameContent.subtitle}</p>
         </div>
 
         <Card className="w-full shadow-xl border-t-[2px] border-l-[2px] border-r-[8px] border-b-[8px] border-[#333333] bg-[#FCDC94] rounded-xl overflow-clip">
