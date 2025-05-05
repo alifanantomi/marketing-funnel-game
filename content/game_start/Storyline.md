@@ -1,7 +1,7 @@
 ---
-title: Storyline
+title: Storyline Dua
 ---
 
-Millie, a young entrepreneur passionate about stylish, high-quality boots. She just started her own business, Boots by Millie, but she faces a major challenge: How can she sell her boots successfully and stand out in the market?
+Welcome to From Buzz to Buy - Marketing Funnel Game-Based Learning a marketing simulation game that transforms textbook theory into real, relatable, hands-on experience. Forget passive learning. This is your chance to think, create, and compete as a real-life brand owner for a rising fashion brand named Boots by Millie.
 
-The players will step into Millie's shoes and make real business decisions to sell her boots. Every choice from social media ads to pricing strategies affects Millie's sales and engagement. The player with the highest revenue wins!
+Millie is a fictional but realistic local fashion brand. She's got the potential, the style, and the vision but she doesn’t have you… yet. Your job? Transform this quiet underdog into a head-turning, conversation-starting, trendsetting brand.
