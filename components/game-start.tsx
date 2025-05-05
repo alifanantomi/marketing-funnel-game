@@ -1,12 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { TypeAnimation } from "@/components/type-animation"
 import { AnimatePresence, motion } from "framer-motion"
 import { useSound } from "@/hooks/use-sound"
 import { CharacterAnimation } from "@/components/character-animation"
 import { DigitalMarketingAnimation } from "@/components/digital-marketing-animation"
+import client from "@/tina/__generated__/client"
+import { useTina } from "tinacms/dist/react"
+import { TinaMarkdown } from "tinacms/dist/rich-text"
+import { MarkdownTyper } from "./markdown-typer"
+import { formatIDR } from "@/lib/formatIDR"
 
 export default function GameStart({ onComplete }: { onComplete: () => void }) {
   const [step, setStep] = useState(1)
@@ -20,6 +25,48 @@ export default function GameStart({ onComplete }: { onComplete: () => void }) {
       onComplete()
     }
   }
+
+  const[storyline, setStoryline] = useState<any>();
+  const[setup, setSetup] = useState<any>();
+  
+  useEffect(() => {
+    const fetchStoryline = async () => {
+      const result = await client.queries.game_start({
+        relativePath: "Storyline.md",
+      });
+      setStoryline(result);
+    };
+
+    const fetchGameSetup = async () => {
+      const result = await client.queries.game_setup({
+        relativePath: "Game-Setup.md",
+      });
+      setSetup(result);
+    };
+
+    fetchStoryline();
+    fetchGameSetup();
+  }, []);
+
+
+  const storylineData = useTina({
+    data: storyline?.data,
+    query: storyline?.query,
+    variables: storyline?.variables
+  })
+  
+  const setupData = useTina({
+    data: setup?.data,
+    query: setup?.query,
+    variables: setup?.variables
+  })
+
+  const storyline_title = storylineData?.data?.game_start?.title;
+  const storyline_body = storylineData?.data?.game_start?.body;
+
+  const game_setup_title = setupData?.data?.game_setup?.title
+  const game_setup_body = setupData?.data?.game_setup?.body
+  const game_setup_price = setupData?.data?.game_setup?.boot_price.toString()
 
   return (
     <div className="space-y-6">
@@ -38,17 +85,9 @@ export default function GameStart({ onComplete }: { onComplete: () => void }) {
                 <CharacterAnimation mood="happy" width={180} height={180} />
               </div>
               <div className="w-full md:w-2/3">
-                <h2 className="text-3xl font-bold text-retro-dark mb-4">Storyline</h2>
-                <div className="rounded-lg">
-                  <TypeAnimation
-                    text="Millie, a young entrepreneur passionate about stylish, high-quality boots. She just started her own business, Boots by Millie, but she faces a major challenge: How can she sell her boots successfully and stand out in the market?"
-                    className="font-medium text-retro-dark mb-4"
-                  />
-                  <TypeAnimation
-                    text="The players will step into Millie's shoes and make real business decisions to sell her boots. Every choice from social media ads to pricing strategies affects Millie's sales and engagement. The player with the highest revenue wins!"
-                    className="font-medium text-retro-dark"
-                    delay={3000}
-                  />
+                <h2 className="text-3xl font-bold text-retro-dark mb-4">{storyline_title}</h2>
+                <div className="rounded-lg space-y-4 font-medium text-retro-dark">
+                  <MarkdownTyper content={storyline_body} />
                 </div>
               </div>
             </div>
@@ -75,20 +114,15 @@ export default function GameStart({ onComplete }: { onComplete: () => void }) {
                 <CharacterAnimation mood="neutral" width={180} height={180} />
               </div>
               <div className="w-full md:w-2/3">
-                <h2 className="text-2xl font-bold text-retro-dark mb-4">Game Setup</h2>
-                <div className="">
-                  <TypeAnimation text="Players register as Millie." className="mb-2 text-retro-dark font-medium" />
-                  <TypeAnimation
-                    text="The system introduces Millie's background and her new boot collection."
-                    className="mb-2 font-medium text-retro-dark"
-                    delay={1000}
-                  />
-                  <TypeAnimation
-                    text="Each team will make marketing decisions to help Millie's business succeed."
-                    className="mb-2 font-medium text-retro-dark"
-                    delay={2000}
-                  />
-                  <TypeAnimation text="Price: IDR 350.000/boots" className="text-retro-green font-bold text-xl" delay={3000} />
+                <h2 className="text-2xl font-bold text-retro-dark mb-4">{game_setup_title}</h2>
+                <div className="space-y-4">
+                  <div className="text-retro-dark font-medium">
+                    <MarkdownTyper content={game_setup_body} />
+                  </div>
+
+                  <div className="text-retro-green font-bold">
+                    <TypeAnimation text={`Price: IDR ${formatIDR(game_setup_price)}/boots`} className="text-retro-green font-bold text-xl" delay={3000} />
+                  </div>
                 </div>
               </div>
             </div>

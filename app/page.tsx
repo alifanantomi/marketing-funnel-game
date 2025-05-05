@@ -14,7 +14,8 @@ import { StrategySlide } from "@/components/strategy-slide"
 import { CategoryBoard } from "@/components/category-board"
 import { DigitalMarketingAnimation } from "@/components/digital-marketing-animation"
 
-import gameContent from "@/content/game.json"
+import { client } from "../tina/__generated__/client";
+import { useTina } from "tinacms/dist/react"
 
 export default function Home() {
   const [gameState, setGameState] = useState({
@@ -138,12 +139,35 @@ export default function Home() {
     }
   }
 
+  const[graphQLresponse, setGraphQLresponse] = useState<any>();
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      const result = await client.queries.site({
+        relativePath: "From-Buzz-to-Buy.md",
+      });
+      setGraphQLresponse(result);
+    };
+
+    fetchContent();
+  }, []);
+
+  const pageData = useTina({
+    data: graphQLresponse?.data,
+    query: graphQLresponse?.query,
+    variables: graphQLresponse?.variables
+  })
+
+  const siteTitle = pageData?.data?.site?.site_title;
+  const siteSubtitle = pageData?.data?.site?.site_subtitle;
+  const siteCardTitle = pageData?.data?.site?.site_card_title;
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-8 bg-retro-yellow">
       <div className="w-full max-w-5xl">
         <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-5xl text-retro-dark font-extrabold font-mono tracking-tight">{gameContent.title}</h1>
-          <p className="text-xl font-mono text-retro-dark">{gameContent.subtitle}</p>
+          <h1 className="text-3xl md:text-5xl text-retro-dark font-extrabold font-mono tracking-tight">{siteTitle}</h1>
+          <p className="text-xl font-mono text-retro-dark">{siteSubtitle}</p>
         </div>
 
         <Card className="w-full shadow-xl border-t-[2px] border-l-[2px] border-r-[8px] border-b-[8px] border-[#333333] bg-[#FCDC94] rounded-xl overflow-clip">
@@ -151,7 +175,7 @@ export default function Home() {
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <DigitalMarketingAnimation type={getAnimationType()} className="w-10 h-10 color-retro-dark" />
-                <CardTitle className="text-2xl text-retro-dark font-bold">Boots by Millie</CardTitle>
+                <CardTitle className="text-2xl text-retro-dark font-bold">{siteCardTitle}</CardTitle>
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-retro-dark px-4 py-2 rounded-full text-white shadow-md">
@@ -166,7 +190,9 @@ export default function Home() {
             )}
 
             {gameState.phase === "start" && (
-              <GameStart onComplete={() => setGameState((prev) => ({ ...prev, phase: "phase1" }))} />
+              <GameStart
+                onComplete={() => setGameState((prev) => ({ ...prev, phase: "phase1" }))} 
+              />
             )}
             {gameState.phase === "phase1" && (
               <PhaseOne
