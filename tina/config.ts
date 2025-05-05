@@ -124,6 +124,34 @@ export default defineConfig({
             }
           },
         },
+      },
+      {
+        name: "game_guidelines",
+        label: "Game Guidelines",
+        path: "content/game_guidelines",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true
+          },
+          {
+            type: 'rich-text',
+            name: 'body',
+            label: 'Body',
+            isBody: true,
+          },
+        ],
+        ui: {
+          // This is an DEMO router. You can remove this to fit your site
+          router: ({ document }) => {
+            if (document._sys.filename == "Game-Guidelines") {
+              return "/"
+            }
+          },
+        },
       }
     ],
   },
