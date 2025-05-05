@@ -9,6 +9,8 @@ import { useSound } from "@/hooks/use-sound"
 import { CharacterAnimation } from "@/components/character-animation"
 import { SpinningWheel } from "@/components/spinning-wheel"
 import { EPInput } from "@/components/ep-input"
+import StrategyEvaluationTableNoNotes from "./strategy-evaluation-table-no-notes"
+import { phaseFive } from "@/commons/strategy-data"
 
 const riskCases = [
   {
@@ -117,6 +119,9 @@ export default function RiskManagement({
                     className="text-retro-dark"
                     delay={9000}
                   />
+
+                  <StrategyEvaluationTableNoNotes data={phaseFive} />
+
                 </div>
               </div>
             </div>

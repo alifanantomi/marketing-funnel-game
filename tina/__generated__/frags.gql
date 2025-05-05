@@ -1,0 +1,25 @@
+fragment SiteParts on Site {
+  __typename
+  site_title
+  site_subtitle
+  site_card_title
+}
+
+fragment Game_startParts on Game_start {
+  __typename
+  title
+  body
+}
+
+fragment Game_setupParts on Game_setup {
+  __typename
+  title
+  body
+  boot_price
+}
+
+fragment Game_guidelinesParts on Game_guidelines {
+  __typename
+  title
+  body
+}

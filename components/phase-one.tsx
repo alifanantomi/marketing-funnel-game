@@ -9,6 +9,9 @@ import { StrategyCard } from "@/components/strategy-card"
 import { CharacterAnimation } from "@/components/character-animation"
 import { EPInput } from "@/components/ep-input"
 
+import StrategyEvaluationTable from "./strategy-evaluation-table"
+import { phaseOne } from "@/commons/strategy-data"
+
 const strategies = [
   {
     id: "instagram-tiktok",
@@ -78,7 +81,7 @@ export default function PhaseOne({
           <CharacterAnimation mood="neutral" width={150} height={150} />
         </div>
         <div className="w-full md:w-3/4">
-          <div className="bg-retro-yellow/30 p-6 rounded-lg mb-6 text-retro-dark">
+          <div className="bg-retro-yellow/30 p-6 rounded-lg mb-6 text-retro-dark font-medium">
             <h2 className="text-2xl font-bold text-retro-dark mb-4">Phase 1: Attention</h2>
             <TypeAnimation
               text="Millie's got the boots—stylish, comfy, and totally wearable anywhere. The only problem? No one really knows her brand yet. Womp womp."
@@ -109,6 +112,8 @@ export default function PhaseOne({
               className="text-gray-700"
               delay={8000}
             />
+
+            <StrategyEvaluationTable data={phaseOne} />
           </div>
         </div>
       </div>

@@ -8,6 +8,8 @@ import { useSound } from "@/hooks/use-sound"
 import { StrategyCard } from "@/components/strategy-card"
 import { CharacterAnimation } from "@/components/character-animation"
 import { EPInput } from "@/components/ep-input"
+import StrategyEvaluationTable from "./strategy-evaluation-table"
+import { phaseOne } from "@/commons/strategy-data"
 
 const strategies = [
   {
@@ -107,6 +109,8 @@ export default function PhaseFour({
               className="text-gray-700"
               delay={6000}
             />
+
+            <StrategyEvaluationTable data={phaseOne} />
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useSound } from "@/hooks/use-sound"
 import { CharacterAnimation } from "@/components/character-animation"
 import { DigitalMarketingAnimation } from "@/components/digital-marketing-animation"
+import GameGuidelinesCarousel from "./game-guidelines-carousel"
 
 export default function GameStart({ onComplete }: { onComplete: () => void }) {
   const [step, setStep] = useState(1)
@@ -118,32 +119,9 @@ export default function GameStart({ onComplete }: { onComplete: () => void }) {
                 </div>
               </div>
               <div className="w-full md:w-2/3">
-                <h2 className="text-3xl font-bold text-retro-dark mb-4">Game Guidelines</h2>
-                <div className="font-medium">
-                  <TypeAnimation
-                    text="This game runs through four exciting marketing stages: Attention, Interest, Desire, and Action. In each stage, players will be faced with strategic decisions designed to experience real-life brand choices."
-                    className="mb-4"
-                  />
-                  <TypeAnimation
-                    text="After making a choice, you'll have 2 minutes to pitch your reasoning and strategy. Think of it as your moment in the spotlight: explain why you picked that option, how you plan to execute it, and what outcome you expect."
-                    className="mb-4"
-                    delay={3000}
-                  />
-                  <TypeAnimation
-                    text="Stage 3 is where things get even more real. Instead of choosing from fixed options, you'll be asked to create your own custom strategy plan complete with creative ideas and action steps."
-                    className="mb-4"
-                    delay={6000}
-                  />
-                  <TypeAnimation
-                    text="At the end of the game, you'll see how your choices would impact Millie's business in the real world!"
-                    className="mb-4"
-                    delay={9000}
-                  />
-                  <TypeAnimation
-                    text=" Psst.. psst.. Watch out, there will be huge problems that you will face at the end of the game. So, be prepared!"
-                    className="mb-4 text-retro-green font-bold"
-                    delay={11000}
-                  />
+                <h2 className="text-3xl text-center font-bold text-retro-dark mb-4">Game Guidelines</h2>
+                <div className="w-full flex justify-center">
+                  <GameGuidelinesCarousel />
                 </div>
               </div>
             </div>

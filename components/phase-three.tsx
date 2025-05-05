@@ -11,6 +11,8 @@ import { EPInput } from "@/components/ep-input"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
+import StrategyEvaluationTableNoNotes from "./strategy-evaluation-table-no-notes"
+import { phaseThree } from "@/commons/strategy-data"
 
 export default function PhaseThree({
   onComplete,
@@ -82,6 +84,8 @@ export default function PhaseThree({
               className="text-retro-dark"
               delay={8000}
             />
+
+            <StrategyEvaluationTableNoNotes data={phaseThree} />
           </div>
         </div>
       </div>
