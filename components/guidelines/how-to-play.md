@@ -1,11 +1,11 @@
-### Team Setup
+### **Team Setup**
 
 - Teams of 3 to 5 members  
 - Each team represents Millie as the brand owner  
 - Shared mission: create your brand journey using smart, strategic, and compelling marketing moves  
 - Solo mode works too for individual practice
 
-### Structure
+### **Structure**
 
 The game has five parts:
 
