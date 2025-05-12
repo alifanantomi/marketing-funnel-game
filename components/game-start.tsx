@@ -96,12 +96,8 @@ export default function GameStart({
                     </div>
                   </div>
                 </div>
-                <Button
-                  onClick={handleNext}
-                  className="w-full bg-retro-yellow hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
-                >
-                  Next
-                </Button>
+                
+                <ActionButton />
               </motion.div>
             )}
 
@@ -136,12 +132,8 @@ export default function GameStart({
                     </div>
                   </div>
                 </div>
-                <Button
-                  onClick={handleNext}
-                  className="w-full bg-retro-yellow hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
-                >
-                  Next
-                </Button>
+                
+                <ActionButton />
               </motion.div>
             )}
 
@@ -168,12 +160,8 @@ export default function GameStart({
                     </div>
                   </div>
                 </div>
-                <Button
-                  onClick={handleNext}
-                  className="w-full bg-retro-yellow hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
-                >
-                  Start Game
-                </Button>
+
+                <ActionButton />
               </motion.div>
             )}
           </AnimatePresence>
