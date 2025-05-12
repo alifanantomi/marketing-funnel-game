@@ -13,10 +13,15 @@ import { useSound } from "@/hooks/use-sound"
 import { StrategySlide } from "@/components/strategy-slide"
 import { CategoryBoard } from "@/components/category-board"
 import { DigitalMarketingAnimation } from "@/components/digital-marketing-animation"
+import PlayerSelect from "@/components/player-select"
 
 export default function Home() {
+  const [player, setPlayer] = useState('')
+  const playerList = ['player', 'facilitator']
+
   const [gameState, setGameState] = useState({
-    phase: "start", // start, phase1, phase2, phase3, phase4, risk, results
+    player: '',
+    phase: "player-select", // player-select, start, phase1, phase2, phase3, phase4, risk, results
     choices: {
       phase1: null,
       phase2: null,
@@ -78,7 +83,7 @@ export default function Home() {
 
   const handlePreviousPhase = (currentPhase: string) => {
     playButtonSound() // Add sound effect when going to previous phase
-    const phases = ["start", "phase1", "phase2", "phase3", "phase4", "risk", "results"]
+    const phases = ["player-select", "start", "phase1", "phase2", "phase3", "phase4", "risk", "results"]
     const currentIndex = phases.indexOf(currentPhase)
 
     if (currentIndex > 0) {
@@ -111,7 +116,7 @@ export default function Home() {
   }
 
   const getNextPhase = (currentPhase: string) => {
-    const phases = ["start", "phase1", "phase2", "phase3", "phase4", "risk", "results"]
+    const phases = ["player-select", "start", "phase1", "phase2", "phase3", "phase4", "risk", "results"]
     const currentIndex = phases.indexOf(currentPhase)
     return phases[currentIndex + 1]
   }
@@ -159,13 +164,26 @@ export default function Home() {
             </div>
           </CardHeader>
           <CardContent className="pt-6">
-            {gameState.phase !== "start" && gameState.phase !== "results" && (
+            {gameState.phase !== "start" && gameState.phase !== "results" && gameState.phase !== "player-select" && (
               <CategoryBoard currentPhase={gameState.phase} />
             )}
 
-            {gameState.phase === "start" && (
-              <GameStart onComplete={() => setGameState((prev) => ({ ...prev, phase: "phase1" }))} />
+            {gameState.phase === 'player-select' && (
+              <PlayerSelect 
+                playerList={playerList}
+                player={player}
+                setPlayer={(player: string) => setPlayer(player) }  
+                onComplete={(player: string) => setGameState((prev) => ({ ...prev, phase: "start", player: player }))} 
+              />
             )}
+
+            {gameState.phase === "start" && (
+              <GameStart 
+                player={player}
+                onPlayerSelect={() => setGameState((prev) => ({ ...prev, phase: "player-select" }))} 
+                onComplete={() => setGameState((prev) => ({ ...prev, phase: "phase1" }))} />
+            )}
+
             {gameState.phase === "phase1" && (
               <PhaseOne
                 onComplete={(choice) => handlePhaseComplete("phase1", choice)}

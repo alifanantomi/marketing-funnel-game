@@ -1,0 +1,6 @@
+- Be consistent across all teams.
+- Pay attention to how well players justify their choices, not just the idea itself.
+- Encourage clear and structured presentations.
+- Focus on whether the strategy matches the brand’s identity and audience.
+- Keep track of both fixed EP from chosen strategies and merit-based EP from player explanations.
+- Use printed category board for easier score tracking.

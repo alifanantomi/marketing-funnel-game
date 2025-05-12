@@ -1,0 +1,1 @@
+This guideline is designed to help facilitators run **From Buzz to Buy - Marketing Funnel Game Based Learning** smoothly and fairly. It includes details on EP scoring, both fixed and merit-based, as well as category boards to guide assessment. Use this guide to maintain consistency and accuracy during gameplay.
