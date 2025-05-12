@@ -41,7 +41,7 @@ export default function FacilitatorGuidelinesCarousel() {
                     {facilitator_guidelines[index].title}
                   </h3>
                 </CardHeader>
-                <CardContent className="p-6 space-y-4 bg-white font-medium max-h-96 overflow-scroll">
+                <CardContent className="markdown-content p-6 space-y-4 bg-white font-medium max-h-96 overflow-scroll">
                   <GuidelineComponent />
                 </CardContent>
               </Card>

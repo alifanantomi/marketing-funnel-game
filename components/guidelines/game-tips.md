@@ -1,6 +1,6 @@
 - Think like your audience  
 - Look at real-world brands for inspiration (Glossier, Nike, Uniqlo)  
 - Describe visuals vividly  
-- Tell stories — emotion sticks more than facts  
+- Tell stories, emotion sticks more than facts  
 - Roleplay if it helps  
 - Use quick stats (e.g., “Instagram polls get 3x more engagement”)
