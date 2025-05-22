@@ -118,7 +118,10 @@ export default function PhaseTwo({
         </div>
       </div>
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl font-bold text-retro-dark">Choose Your Strategy!</h3>
+        <div className="space-y-2">
+          <h3 className="text-xl font-bold text-retro-dark">Choose your strategy</h3>
+          <span className="font-regular text-sm">Explain your strategy and plan in front of the class! (You can use comparative adjective as the language structure)</span>
+        </div>
         <div className="text-lg px-4 py-2 rounded-lg">
           <span className="font-regular">Available Capital:</span><span className="font-bold"> IDR {capital.toLocaleString()}</span>
         </div>

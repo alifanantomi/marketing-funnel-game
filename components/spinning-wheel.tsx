@@ -17,9 +17,9 @@ export function SpinningWheel({ onRiskSelected }: SpinningWheelProps) {
   const risks = [
     {
       id: "delayed-materials",
-      title: "Delayed Materials",
+      title: "Delayed materials",
       description:
-        "Oops! The supplier Millie uses just informed her that the boot materials will be delayed for 5 days. This will push back the production timeline and possibly affect her launch plan.",
+        "Oops! Millie has just been notified by her supplier that there will be a five-day delay in the boot materials.",
       color: "#fd5a46", // retro-coral
     },
     {
@@ -33,7 +33,7 @@ export function SpinningWheel({ onRiskSelected }: SpinningWheelProps) {
       id: "product-defect",
       title: "Product defect",
       description:
-        "A small batch of boots came out with a minor flaw that might affect comfort but they've already been shipped out and the customer complaint about it.",
+        "A client complained about a small batch of boots that had a minor problem that would have affected comfort, but the boots had already been sent.",
       color: "#00995e", // retro-green
     },
     {

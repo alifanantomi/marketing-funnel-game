@@ -30,3 +30,5 @@ Players draw a risk scenario and propose a solution. Use the Risk Management Cat
 
 **Click the link below to see the category board**
 [*https://docs.google.com/document/d/1Du743DSIIfLeynVTt_DoaC_WEyqDkun_rn5iwWTndsM/edit?usp=sharing*](https://docs.google.com/document/d/1Du743DSIIfLeynVTt_DoaC_WEyqDkun_rn5iwWTndsM/edit?usp=sharing "Category board")
+
+After counting all the Engagement Points, divide it into 5. 5 points = 1 boots sales. For example: 45 EP = 9 boots sales

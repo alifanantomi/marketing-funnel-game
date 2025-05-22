@@ -1,6 +1,6 @@
 ### Stage 1: ATTENTION — Make Them Look!
 
-**Scenario**: Millie is invisible. Make noise and get her noticed.
+**Scenario**: Boots by Millie is invisible. Make noise and get her noticed.
 
 You’ll receive: **3 strategy cards**
 
@@ -49,7 +49,7 @@ You’ll receive: **3 new strategy cards**
 
 ### Stage 3: DESIRE — Make Them Want It
 
-**Scenario**: Build emotional appeal. Make people *want* Millie.
+**Scenario**: Build emotional appeal. Make people **want** Millie.
 
 **Challenge**: No cards — create a campaign from scratch.
 
@@ -88,7 +88,7 @@ You’ll receive: **3 strategy cards**
 
 **Task**:
 
-- Choose and justify strategy  
+- Choose and justify the strategy  
 - Show timing, platform, and outcome
 
  Presentation Time: 2 minutes  
@@ -109,7 +109,7 @@ You’ll receive: a **crisis scenario**
 - Viral complaint about quality  
 - Misinterpreted campaign
 
-**Response Plan**:
+**Response Plan: Analyze situation calmly (Analyze the situation calmly)**:
 
 - Analyze situation calmly  
 - Outline internal + external responses  

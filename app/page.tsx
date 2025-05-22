@@ -173,7 +173,10 @@ export default function Home() {
                 playerList={playerList}
                 player={player}
                 setPlayer={(player: string) => setPlayer(player) }  
-                onComplete={(player: string) => setGameState((prev) => ({ ...prev, phase: "start", player: player }))} 
+                onComplete={(player: string) => {
+                  playBackgroundMusic();
+                  setGameState((prev) => ({ ...prev, phase: "start", player: player }))
+                }} 
               />
             )}
 

@@ -15,9 +15,9 @@ import { phaseFive } from "@/commons/strategy-data"
 const riskCases = [
   {
     id: "delayed-materials",
-    title: "Delayed Materials",
+    title: "Delayed materials",
     description:
-      "Oops! The supplier Millie uses just informed her that the boot materials will be delayed for 5 days. This will push back the production timeline and possibly affect her launch plan.",
+      "Oops! Millie has just been notified by her supplier that there will be a five-day delay in the boot materials.",
   },
   {
     id: "payment-glitch",
@@ -99,7 +99,7 @@ export default function RiskManagement({
                     delay={2000}
                   />
                   <TypeAnimation
-                    text="In this round, your team will face a real-life business scenario, a sudden problem that could affect Millie's sales, brand, or customer experience."
+                    text="In this phase, your team will face a real-life business scenario, a sudden problem that could affect Millie's sales, brand, or customer experience."
                     className="text-retro-dark mb-4"
                     delay={3000}
                   />
@@ -111,6 +111,11 @@ export default function RiskManagement({
                   <TypeAnimation text="Your mission?" className="text-retro-dark mb-4" delay={6000} />
                   <TypeAnimation
                     text="Come up with the best possible solution that's creative, realistic, and truly protects Millie's brand and business."
+                    className="text-retro-dark mb-4"
+                    delay={7000}
+                  />
+                  <TypeAnimation
+                    text="Explain in front of the class (you can use conditional sentence as the language structure)"
                     className="text-retro-dark mb-4"
                     delay={7000}
                   />

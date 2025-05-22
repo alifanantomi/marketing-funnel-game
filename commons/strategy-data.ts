@@ -25,7 +25,7 @@ export const phaseOne = [
   {
     category: "Attractiveness",
     description:
-      "Will this strategy grab attention, spark interest, or make the audience want to engage or purchase?",
+      "Will this strategy grab attention, spark interest, or make the prospective buyers want to engage or purchase?",
     notes: "Consider visuals, messaging, or emotional appeal.",
   },
 ];
@@ -92,7 +92,7 @@ export const phaseThree = [
 export const phaseFive = [
   {
     category: "Problem Identification",
-    description: "Did the team clearly understand and explain the issue in the card?",
+    description: "Did the team understand the risk management case study and explain the issue clearly?",
   },
   {
     category: "Solution Logic",

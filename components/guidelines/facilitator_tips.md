@@ -4,3 +4,4 @@
 - Focus on whether the strategy matches the brand’s identity and audience.
 - Keep track of both fixed EP from chosen strategies and merit-based EP from player explanations.
 - Use printed category board for easier score tracking.
+- Encourage all team members to actively participated during the game.

@@ -46,12 +46,12 @@ export default function GameStart({
   const ActionButton = () =>{
     return (
       
-      <div className="flex gap-2">
+      <div className="flex flex-col sm:flex-row gap-2">
       <Button
         onClick={handlePrev}
-        className="w-1/4 bg-retro-blue hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
+        className="w-full sm:w-1/4 bg-retro-blue hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
       >
-        { step === 1 ? 'Back to select role' : 'Previous' }
+       Previous
       </Button>
       <Button
         onClick={handleNext}
@@ -85,7 +85,7 @@ export default function GameStart({
                     <h2 className="text-3xl font-bold text-retro-dark mb-4">Storyline</h2>
                     <div className="rounded-lg">
                       <TypeAnimation
-                        text="Millie, a young entrepreneur passionate about stylish, high-quality boots. She just started her own business, Boots by Millie, but she faces a major challenge: How can she sell her boots successfully and stand out in the market?"
+                        text="Millie, a young entrepreneur about stylish and high-quality boots. She just started her own business, Boots by Millie, but she faces a major challenge: How can she sell her boots successfully and stand out in the market?"
                         className="font-medium text-retro-dark mb-4"
                       />
                       <TypeAnimation
