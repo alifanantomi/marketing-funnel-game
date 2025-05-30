@@ -16,12 +16,12 @@ export function CategoryBoard({ currentPhase }: CategoryBoardProps) {
   ]
 
   return (
-    <div className="flex gap-2 justify-between mb-6 p-3 bg-retro-green rounded-lg border-[2px] border-retro-dark">
+    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 justify-between mb-6 p-3 bg-retro-green rounded-lg border-[2px] border-retro-dark">
       {phases.map((phase) => (
         <div
           key={phase.id}
           className={cn(
-            "w-full text-center px-3 py-2 rounded-md transition-all duration-300",
+            "w-full sm:w-full text-center px-3 py-2 rounded-md transition-all duration-300",
             currentPhase === phase.id
               ? `${phase.color} text-[white]`
               : "text-[#F8F7F3] hover:bg-retro-yellow/20",

@@ -86,7 +86,7 @@ export default function RiskManagement({
                 <CharacterAnimation mood="sad" width={150} height={150} />
               </div>
               <div className="w-full md:w-3/4">
-                <div className="bg-brown-50 p-6 rounded-lg mb-6">
+                <div className="bg-brown-50 sm:p-6 rounded-lg mb-6">
                   <h2 className="text-2xl font-bold text-retro-dark mb-4">Risk Management</h2>
                   <TypeAnimation
                     text="Just when Millie thought everything was going smoothly..."
@@ -136,7 +136,7 @@ export default function RiskManagement({
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <Button
                 onClick={onPrevious}
-                className="bg-white border border-brown-300 text-brown-800 hover:bg-brown-50"
+                className="bg-retro-yellow border-2 border-retro-dark text-retro-dark hover:bg-retro-yellow/90 font-bold"
               >
                 Previous
               </Button>
@@ -157,7 +157,7 @@ export default function RiskManagement({
                 <CharacterAnimation mood="sad" width={150} height={150} />
               </div>
               <div className="w-full md:w-3/4">
-                <div className="bg-orange-50 p-6 rounded-lg mb-6">
+                <div className="bg-orange-50 p-4 sm:p-6 rounded-lg mb-6">
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-2xl font-bold text-orange-800">Something Happened!</h2>
                     <div className="bg-brown-100 px-4 py-2 rounded-lg">
@@ -194,7 +194,7 @@ export default function RiskManagement({
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <Button
                 onClick={() => setStep(1)}
-                className="bg-white border border-brown-300 text-brown-800 hover:bg-brown-50"
+                className="bg-retro-blue border-2 border-retro-dark text-retro-dark hover:bg-retro-blue/90 font-bold"
               >
                 Spin Again
               </Button>

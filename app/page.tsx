@@ -163,7 +163,7 @@ export default function Home() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="pt-6">
+          <CardContent className="p-4 sm:p-6">
             {gameState.phase !== "start" && gameState.phase !== "results" && gameState.phase !== "player-select" && (
               <CategoryBoard currentPhase={gameState.phase} />
             )}

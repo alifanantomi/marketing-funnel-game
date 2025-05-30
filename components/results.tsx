@@ -147,7 +147,7 @@ Total EP: ${totalEP}
                 <CharacterAnimation mood="happy" width={150} height={150} />
               </div>
               <div className="w-full md:w-3/4">
-                <div className="bg-gradient-to-r from-brown-100 to-brown-50 p-6 rounded-lg">
+                <div className="bg-gradient-to-r from-brown-100 to-brown-50 sm:p-6 rounded-lg">
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-3xl font-bold text-retro-dark">Game Results</h2>
                     <DropdownMenu>

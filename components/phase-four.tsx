@@ -90,7 +90,7 @@ export default function PhaseFour({
           <CharacterAnimation mood="neutral" width={150} height={150} />
         </div>
         <div className="w-full md:w-3/4">
-          <div className="bg-retro-yellow/30 p-6 rounded-lg mb-6">
+          <div className="bg-retro-yellow/30 sm:p-6 rounded-lg mb-6">
             <h2 className="text-2xl font-bold text-retro-dark mb-4">Phase 4: Action</h2>
             <TypeAnimation text="The hype is real, now let's make it happen!" className="text-gray-700 mb-4" />
             <TypeAnimation
@@ -124,12 +124,12 @@ export default function PhaseFour({
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
         <div className="space-y-2">
           <h3 className="text-xl font-bold text-retro-dark">Choose your strategy</h3>
           <span className="font-regular text-sm">Explain your strategy and plan in front of the class! (You can use comparative adjective as the language structure)</span>
         </div>
-        <div className="text-lg px-4 py-2 rounded-lg">
+        <div className="text-lg sm:px-4 py-2 rounded-lg">
           <span className="font-regular">Available Capital:</span><span className="font-bold"> IDR {capital.toLocaleString()}</span>
         </div>
       </div>

@@ -31,7 +31,14 @@ export default function FacilitatorGuidelinesCarousel() {
 
   return (
     <div className="w-full">
-      <Carousel setApi={setApi} className="mx-auto w-full max-w-[12rem] md:max-w-md lg:max-w-lg">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true
+        }}
+        setApi={setApi} 
+        className="relative h-fit w-full md:max-w-md lg:max-w-lg mx-auto"
+      >        
         <CarouselContent>
           {Components.map((GuidelineComponent, index) => (
             <CarouselItem key={index}>
@@ -41,17 +48,25 @@ export default function FacilitatorGuidelinesCarousel() {
                     {facilitator_guidelines[index].title}
                   </h3>
                 </CardHeader>
-                <CardContent className="markdown-content p-6 space-y-4 bg-white font-medium max-h-96 overflow-scroll">
+                <CardContent className="markdown-content p-6 space-y-4 bg-white font-medium h-96 max-h-96 overflow-scroll">
                   <GuidelineComponent />
                 </CardContent>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className="hidden sm:inline">
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
+        <div className="absolute left-1/2 bottom-0">
+          <div className="relative mx-auto sm:hidden">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
+        </div>
       </Carousel>
-      <div className="py-2 text-center text-sm font-medium text-retro-dark">
+      <div className="pt-8 text-center text-sm font-medium text-retro-dark">
         Slide {current} of {count}
       </div>
     </div>

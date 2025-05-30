@@ -83,7 +83,7 @@ export function SpinningWheel({ onRiskSelected }: SpinningWheelProps) {
 
   return (
     <div className="flex flex-col items-center my-8">
-      <div className="relative w-64 h-64 mb-8">
+      <div className="relative w-72 h-72 mb-8">
         {/* Wheel arrow/pointer */}
         <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
           <div className="w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[25px] border-t-retro-purple"></div>
@@ -127,7 +127,7 @@ export function SpinningWheel({ onRiskSelected }: SpinningWheelProps) {
       <Button
         onClick={handleSpin}
         disabled={isSpinning}
-        className="bg-retro-yellow border-[2px] hover:bg-retro-yellow border-retro-dark hover:opacity-90 disabled:opacity-50 text-retro-dark font-bold py-2 px-6 rounded-full shadow-lg transform transition-transform hover:scale-105 active:scale-95"
+        className="w-full bg-retro-blue border-2 hover:bg-retro-blue/90 border-retro-dark disabled:opacity-50 text-retro-dark font-bold py-2 px-6 rounded-full shadow-lg transform transition-transform hover:scale-105 active:scale-95"
       >
         {isSpinning ? "Spinning..." : "Spin the Wheel"}
       </Button>
