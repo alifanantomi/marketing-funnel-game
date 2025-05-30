@@ -47,6 +47,7 @@ export default function PhaseOne({
   onEPChange: (ep: number) => void
 }) {
   const [selectedStrategy, setSelectedStrategy] = useState<string | null>(null)
+  const [prevConfirmedStrategy, setPrevConfirmedStrategy] = useState<string | null>(null)
   const [confirmedStrategy, setConfirmedStrategy] = useState<string | null>(null)
   const [showEPInput, setShowEPInput] = useState(false)
   const { playButtonSound } = useSound()
@@ -58,11 +59,20 @@ export default function PhaseOne({
 
   const handleStrategyConfirm = (id: string) => {
     playButtonSound()
+
+    setPrevConfirmedStrategy(id)
+
     // Find the selected strategy
+    const prevSelected = strategies.find((s) => s.id === prevConfirmedStrategy)
     const selected = strategies.find((s) => s.id === id)
+    
     if (selected && selected.cost <= capital) {
       setConfirmedStrategy(id)
-      // Reduce capital by the cost of the strategy
+      // Reduce capital by the cost of the strategy'
+      if (prevSelected) {
+        
+        setCapital(capital += prevSelected.cost)
+      }
       setCapital(capital - selected.cost)
       // Show EP input after confirming strategy
       setShowEPInput(true)
@@ -135,6 +145,7 @@ export default function PhaseOne({
             transition={{ delay: index * 0.2 }}
           >
             <StrategyCard
+              confirmedStrategy={confirmedStrategy}
               strategy={strategy}
               isSelected={selectedStrategy === strategy.id}
               onSelect={() => handleStrategySelect(strategy.id)}
@@ -149,14 +160,14 @@ export default function PhaseOne({
       <div className="flex flex-col sm:flex-row gap-4 mt-4">
         <Button
           onClick={onPrevious}
-          className="bg-retro-blue border border-retro-blue text-white hover:bg-retro-blue/80"
+          className="bg-retro-yellow border-2 border-retro-dark  text-retro-dark font-bold hover:bg-retro-yellow/90"
         >
           Previous
         </Button>
         <Button
           onClick={handleNext}
           disabled={!confirmedStrategy}
-          className="w-full bg-retro-yellow hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
+          className="w-full bg-retro-blue  hover:bg-retro-blue/90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
         >
           Continue to Phase 2
         </Button>

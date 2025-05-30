@@ -18,7 +18,9 @@ export function StrategyCard({
   isSelected,
   onSelect,
   onConfirm,
+  confirmedStrategy
 }: {
+  confirmedStrategy: string | null
   strategy: Strategy
   isSelected: boolean
   onSelect: () => void
@@ -67,6 +69,7 @@ export function StrategyCard({
           </p>
           {isSelected && (
             <Button
+              disabled={confirmedStrategy === strategy.id}
               onClick={handleConfirm}
               className="w-full bg-retro-green hover:bg-retro-green hover:opacity-90 text-white shadow-md transform transition-transform hover:scale-105 active:scale-95"
             >

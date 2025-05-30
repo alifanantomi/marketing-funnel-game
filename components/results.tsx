@@ -118,7 +118,7 @@ Boots by Millie - Game Results
 Boots Sold: ${bootsSold} pairs
 Total Revenue: IDR ${revenue.toLocaleString()}
 Remaining Capital: IDR ${capital.toLocaleString()}
-Total Profit: IDR ${totalProfit.toLocaleString()}
+Total Earning: IDR ${totalProfit.toLocaleString()}
 Total EP: ${totalEP}
     `
 
@@ -234,7 +234,7 @@ Total EP: ${totalEP}
                         <CardHeader className="pb-2">
                           <CardTitle className="text-lg flex items-center justify-center">
                             <TrendingUp className="mr-2 text-brown-600" size={20} />
-                            Total Profit
+                            Total Earning
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="text-center">
@@ -354,7 +354,7 @@ Total EP: ${totalEP}
                       <p className="text-gray-600">Custom Strategy Cost:</p>
                       <p className="text-gray-800 font-semibold">IDR {customStrategyCost.toLocaleString()}</p>
 
-                      <p className="text-gray-600">Total Profit:</p>
+                      <p className="text-gray-600">Total Earning:</p>
                       <p className="text-gray-800 font-semibold">IDR {totalProfit.toLocaleString()}</p>
 
                       <p className="text-gray-600">Total EP:</p>

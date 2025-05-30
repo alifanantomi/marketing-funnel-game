@@ -152,14 +152,14 @@ export default function PhaseThree({
       <div className="flex flex-col sm:flex-row gap-4 mt-4">
         <Button
           onClick={onPrevious}
-          className="bg-retro-blue border border-retro-blue text-white hover:bg-retro-blue/80"
+          className="bg-retro-yellow border-2 border-retro-dark  text-retro-dark font-bold hover:bg-retro-yellow/90"
         >
           Previous
         </Button>
         <Button
           onClick={handleNext}
           disabled={!costConfirmed}
-          className="w-full bg-retro-yellow hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
+          className="w-full bg-retro-blue  hover:bg-retro-blue/90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
         >
           Continue to Phase 4
         </Button>

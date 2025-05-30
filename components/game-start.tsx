@@ -49,13 +49,13 @@ export default function GameStart({
       <div className="flex flex-col sm:flex-row gap-2">
       <Button
         onClick={handlePrev}
-        className="w-full sm:w-1/4 bg-retro-blue hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
+        className="w-full sm:w-1/4 bg-retro-yellow hover:bg-retro-yellow/90 hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
       >
        Previous
       </Button>
       <Button
         onClick={handleNext}
-        className="w-full bg-retro-yellow hover:bg-retro-yellow hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
+        className="w-full bg-retro-blue  hover:bg-retro-blue/90 hover:opacity-90 text-retro-dark font-bold py-2 px-6 rounded-lg border-[2px] border-retro-dark shadow-md"
       >
         {player === 'player' && step == 3 ? 'Game start' : player === 'facilitator' && step == 4 ? 'Game start' : 'Next'}
       </Button>
