@@ -9,6 +9,12 @@ export function useSound() {
   const successSoundRef = useRef<HTMLAudioElement | null>(null)
   const spinSoundRef = useRef<HTMLAudioElement | null>(null)
   const [soundsLoaded, setSoundsLoaded] = useState(false)
+  const [isMusicPlaying, setIsMusicPlaying] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("bgMusic") !== "off"
+    }
+    return true
+  })
 
   // Initialize audio elements if they don't exist
   const initAudio = useCallback(() => {
@@ -25,7 +31,7 @@ export function useSound() {
     }
 
     if (!backgroundMusicRef.current) {
-      backgroundMusicRef.current = new Audio("/sounds/background-fun.mp3")
+      backgroundMusicRef.current = new Audio("/sounds/bg-sound.mp3")
       backgroundMusicRef.current.volume = 0.15
       backgroundMusicRef.current.loop = true
     }
@@ -101,6 +107,17 @@ export function useSound() {
     }
   }, [])
 
+  const toggleBackgroundMusic = useCallback(() => {
+    const newState = !isMusicPlaying
+    setIsMusicPlaying(newState)
+    localStorage.setItem("bgMusic", newState ? "on" : "off")
+    if (newState) {
+      playBackgroundMusic()
+    } else {
+      stopBackgroundMusic()
+    }
+  }, [isMusicPlaying, playBackgroundMusic, stopBackgroundMusic])
+
   return {
     playTypingSound,
     stopTypingSound,
@@ -109,5 +126,7 @@ export function useSound() {
     playSpinSound,
     playBackgroundMusic,
     stopBackgroundMusic,
+    toggleBackgroundMusic,
+    isMusicPlaying
   }
 }

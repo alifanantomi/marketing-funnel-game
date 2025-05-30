@@ -14,6 +14,7 @@ import { StrategySlide } from "@/components/strategy-slide"
 import { CategoryBoard } from "@/components/category-board"
 import { DigitalMarketingAnimation } from "@/components/digital-marketing-animation"
 import PlayerSelect from "@/components/player-select"
+import { Music, Music2, Volume1Icon, Volume2Icon, VolumeX } from "lucide-react"
 
 export default function Home() {
   const [player, setPlayer] = useState('')
@@ -46,7 +47,7 @@ export default function Home() {
 
   const [playerCapital, setPlayerCapital] = useState(1000000) // Starting capital of 1,000,000 IDR
 
-  const { playBackgroundMusic, stopBackgroundMusic, playButtonSound } = useSound()
+  const { playBackgroundMusic, stopBackgroundMusic, playButtonSound, toggleBackgroundMusic, isMusicPlaying } = useSound()
 
   useEffect(() => {
     // Start background music when the game loads
@@ -147,19 +148,30 @@ export default function Home() {
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-5xl text-retro-dark font-extrabold font-mono tracking-tight">From Buzz to Buy</h1>
           <p className="text-xl font-mono text-retro-dark">Marketing Funnel Game Based Learning</p>
+          <button
+            onClick={toggleBackgroundMusic}
+            className="bg-retro-dark text-white px-4 py-2 rounded-full shadow-md hover:bg-black transition"
+          >
+            {
+              isMusicPlaying ? (
+                <VolumeX />
+              ) : (
+                <Volume2Icon />
+              )
+            }
+          </button>
         </div>
 
         <Card className="w-full shadow-xl border-t-[2px] border-l-[2px] border-r-[8px] border-b-[8px] border-[#333333] bg-[#FCDC94] rounded-xl overflow-clip">
-          <CardHeader className="bg-retro-pink border-b-[2px] border-retro-dark">
+          <CardHeader className="bg-retro-pink border-b-[2px] border-retro-dark p-4 sm:p-6">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <DigitalMarketingAnimation type={getAnimationType()} className="w-10 h-10 color-retro-dark" />
-                <CardTitle className="text-2xl text-retro-dark font-bold">Boots by Millie</CardTitle>
+                <CardTitle className="text-2xl text-retro-dark font-bold w-fit">Boots by Millie</CardTitle>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-retro-dark px-4 py-2 rounded-full text-white shadow-md">
-                  <span className="font-semibold">EP: {totalEP}</span>
-                </div>
+                
+              <div className="bg-retro-dark px-4 py-2 rounded-full text-white shadow-md">
+                <span className="font-semibold">EP: {totalEP}</span>
               </div>
             </div>
           </CardHeader>
